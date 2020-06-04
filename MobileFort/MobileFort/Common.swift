@@ -1,7 +1,7 @@
 import Foundation
 
 enum PostType: String, Decodable {
-    case picture
+    case text, picture
 }
 
 struct Media: Decodable, Identifiable {

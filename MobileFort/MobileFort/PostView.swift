@@ -38,16 +38,18 @@ struct PostView: View {
             
             VStack {
                 ForEach(post.media) { media in
-                    VStack {
-                        RemoteImage(type: .url(URL(string: media.url.encodeUrl()!)!), errorView: { error in
-                            Text(error.localizedDescription)
-                        }, imageView: { image in
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                        }, loadingView: {
-                            Text("Loading...")
-                        })
+                    if !media.url.isEmpty {
+                        VStack {
+                            RemoteImage(type: .url(URL(string: media.url.encodeUrl()!)!), errorView: { error in
+                                Text(error.localizedDescription)
+                            }, imageView: { image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                            }, loadingView: {
+                                Text("Loading...")
+                            })
+                        }
                     }
                 }
             }
