@@ -8,7 +8,13 @@ struct ProfileView: View {
     var body: some View {
         VStack {
             List(posts) { post in
-                Text(String(post.id))
+                VStack {
+                    Text(String(post.id))
+                    
+                    if post.title != nil {
+                        Text(post.title!)
+                    }
+                }
             }
         }.navigationBarTitle(username + "'s Feed").onAppear {
             let url = URL(string: "https://www.pillowfort.social/" + self.username + "/json")!
@@ -20,7 +26,10 @@ struct ProfileView: View {
                             let posts: [Post]
                         }
                         
-                        let decodedPosts = try JSONDecoder().decode(Posts.self, from: jsonData)
+                        let decoder = JSONDecoder()
+                        decoder.keyDecodingStrategy = .convertFromSnakeCase
+                        
+                        let decodedPosts = try decoder.decode(Posts.self, from: jsonData)
                         
                         DispatchQueue.main.sync {
                             self.posts = decodedPosts.posts
