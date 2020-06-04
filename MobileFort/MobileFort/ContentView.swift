@@ -21,7 +21,8 @@ struct PostView: View {
             VStack {
                 ForEach(post.media) { media in
                     VStack {
-                        URLImage(URL(string: media.url.encodeUrl()!)!) { proxy in
+                        URLImage(URL(string: media.url.encodeUrl()!)!,
+                                 delay: 0.25) { proxy in
                             proxy.image
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
