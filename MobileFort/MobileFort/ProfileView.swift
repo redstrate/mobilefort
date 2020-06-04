@@ -1,5 +1,11 @@
 import SwiftUI
 
+struct DescriptionView: View {
+    var body: some View {
+        Text("Hello, world!")
+    }
+}
+
 struct ProfileView: View {
     let username: String
     
@@ -10,7 +16,12 @@ struct ProfileView: View {
             List(posts, id: \.post.id) { post in
                 PostView(post: post)
             }
-        }.navigationBarTitle(username + "'s Feed").onAppear {
+        }
+        .navigationBarTitle(username + "'s Feed")
+        .navigationBarItems(trailing: NavigationLink(destination: DescriptionView()) {
+            Text("View Description")
+        })
+        .onAppear {
             let url = URL(string: "https://www.pillowfort.social/" + self.username + "/json")!
             
             URLSession.shared.dataTask(with: url) { (data, response, error) in
