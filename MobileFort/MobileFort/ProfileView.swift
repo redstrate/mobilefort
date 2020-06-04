@@ -47,7 +47,9 @@ struct DescriptionView: View {
     }
     
     var body: some View {
-        WebView(webView: webView)
+        VStack {
+            WebView(webView: webView)
+        }.navigationBarTitle("Sidebar", displayMode: .inline)
     }
 }
 
@@ -57,14 +59,12 @@ struct ProfileView: View {
     @State var posts: [ParsedPostContainer] = []
     
     var body: some View {
-        VStack {
-            List(posts, id: \.post.id) { post in
-                PostView(post: post)
-            }
+        List(posts, id: \.post.id) { post in
+            PostView(post: post)
         }
-        .navigationBarTitle(username + "'s Feed")
+        .navigationBarTitle(username)
         .navigationBarItems(trailing: NavigationLink(destination: DescriptionView(username: username)) {
-            Text("Description")
+            Text("Sidebar")
         })
         .onAppear {
             let url = URL(string: "https://www.pillowfort.social/" + self.username + "/json")!
