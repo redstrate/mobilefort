@@ -50,6 +50,8 @@ struct MainView: View {
         NavigationView {
             VStack {
                 TextField("Username", text: $username)
+                    .disableAutocorrection(true)
+                    .autocapitalization(.none)
                 NavigationLink(destination: ProfileView(username: username)) {
                     Text("Show Feed")
                 }
