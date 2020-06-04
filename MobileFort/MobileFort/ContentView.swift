@@ -1,13 +1,17 @@
 import SwiftUI
 
-struct ContentView: View {
+struct ProfileView: View {
     var body: some View {
-        Text("Hello, World!")
+        Text("Hello, world!")
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+struct MainView: View {
+    var body: some View {
+        NavigationView {
+            NavigationLink(destination: ProfileView()) {
+                Text("Show Feed")
+            }
+        }
     }
 }
