@@ -3,11 +3,11 @@ import SwiftUI
 struct ProfileView: View {
     let username: String
     
-    @State var posts: [Post] = []
+    @State var posts: [ParsedPostContainer] = []
     
     var body: some View {
         VStack {
-            List(posts) { post in
+            List(posts, id: \.post.id) { post in
                 PostView(post: post)
             }
         }.navigationBarTitle(username + "'s Feed").onAppear {
@@ -25,8 +25,15 @@ struct ProfileView: View {
                         
                         let decodedPosts = try decoder.decode(Posts.self, from: jsonData)
                         
+                        var postArray = [ParsedPostContainer]()
+                        
+                        for post in decodedPosts.posts {
+                            let container = ParsedPostContainer(post: post, contentAttributed: (try? NSAttributedString(data: post.getContent().data(using: .utf8)!, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil))!)
+                            postArray.append(container)
+                        }
+                        
                         DispatchQueue.main.sync {
-                            self.posts = decodedPosts.posts
+                            self.posts = postArray
                         }
                     }
                 } catch {
@@ -39,6 +46,7 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        return ProfileView(username: "foobar", posts: [fooPost, fooPostReblog])
+        //return ProfileView(username: "foobar", posts: [fooPost, fooPostReblog])
+        Text("hello, world!")
     }
 }

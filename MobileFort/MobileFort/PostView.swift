@@ -7,44 +7,60 @@ extension String {
     }
 }
 
-/// A custom view to use NSAttributedString in SwiftUI
-struct AttributedText: UIViewRepresentable {
+final class AttributedTextComponent: UIViewRepresentable {
+    let string: NSAttributedString
+    
+    init(_ string: NSAttributedString) {
+        self.string = string
+    }
+    
+    public func makeUIView(context: UIViewRepresentableContext<AttributedTextComponent>) -> UILabel {
+        UILabel()
+    }
+    
     func updateUIView(_ uiView: UILabel, context: Context) {
-        
+        uiView.backgroundColor = .clear
+        uiView.numberOfLines = 0
+        uiView.lineBreakMode = .byWordWrapping
+        uiView.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        uiView.attributedText = string
     }
-    
-    let html: String
-    
-    init(_ html: String) {
-        self.html = html
-    }
-    
-    public func makeUIView(context: UIViewRepresentableContext<AttributedText>) -> UILabel {
-        let textView = UILabel()
-        textView.backgroundColor = .clear
-        textView.lineBreakMode = .byWordWrapping
-        textView.numberOfLines = 0
-        textView.lineBreakMode = .byWordWrapping
-        textView.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+}
 
-        DispatchQueue.main.async {
-            let data = Data(self.html.utf8)
-            if let attributedString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
-                textView.attributedText = attributedString
-            }
-        }
-                
-        return textView
+struct AttributedText: View {
+    let html: NSAttributedString
+    let component: AttributedTextComponent
+    
+    @State var height: CGFloat = 0.0
+    
+    init(_ html: NSAttributedString) {
+        self.html = html
+        self.component = AttributedTextComponent(html)
+    }
+        
+    var body: some View {
+        component.onAppear {
+            let label = UILabel()
+            
+            label.numberOfLines = 0
+            label.lineBreakMode = .byWordWrapping
+            label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+            
+            label.attributedText = self.html
+            label.sizeToFit()
+            
+            self.height = label.frame.height + 15.0 // for padding
+        }.frame(minWidth: 0.0, maxWidth: .infinity, minHeight: 0.0, maxHeight: height)
     }
 }
 
 struct PostView: View {
-    let post: Post
+    let post: ParsedPostContainer
     
     var body: some View {
         VStack {
             HStack {
-                RemoteImage(type: .url(URL(string: post.avatarUrl.encodeUrl()!)!), errorView: { error in
+                RemoteImage(type: .url(URL(string: post.post.avatarUrl.encodeUrl()!)!), errorView: { error in
                     Text(error.localizedDescription)
                 }, imageView: { image in
                     image
@@ -55,12 +71,12 @@ struct PostView: View {
                 }).frame(width: 50.0, height: 50.0).padding(.leading)
                 
                 VStack(alignment: .leading) {
-                    if post.isReblogged() {
-                        Text(post.username + " reblogged from " + post.originalUsername!).foregroundColor(.gray)
+                    if post.post.isReblogged() {
+                        Text(post.post.username + " reblogged from " + post.post.originalUsername!).foregroundColor(.gray)
                     }
                     
-                    if post.getTitle() != nil {
-                        Text(post.getTitle()!)
+                    if post.post.getTitle() != nil {
+                        Text(post.post.getTitle()!)
                     }
                 }
                 
@@ -68,7 +84,7 @@ struct PostView: View {
             }.frame(maxWidth: .infinity)
             
             VStack {
-                ForEach(post.media) { media in
+                ForEach(post.post.media) { media in
                     if !media.url.isEmpty {
                         VStack {
                             RemoteImage(type: .url(URL(string: media.url.encodeUrl()!)!), errorView: { error in
@@ -83,15 +99,15 @@ struct PostView: View {
                         }
                     }
                 }
-                
-                AttributedText(post.getContent()).frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             }
+            
+            AttributedText(post.contentAttributed)
         }.frame(maxWidth: .infinity)
     }
 }
 
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
-        return PostView(post: fooPost)
+        return PostView(post: ParsedPostContainer(post: fooPost, contentAttributed: NSAttributedString()))
     }
 }

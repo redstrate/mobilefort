@@ -54,6 +54,11 @@ struct Post: Decodable, Identifiable {
     }
 }
 
+struct ParsedPostContainer {
+    let post: Post
+    let contentAttributed: NSAttributedString
+}
+
 let mediaURL = "https://homepages.cae.wisc.edu/~ece533/images/airplane.png"
 
 let testMedia = Media(id: 0,
