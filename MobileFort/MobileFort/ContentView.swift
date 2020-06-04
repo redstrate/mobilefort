@@ -14,6 +14,12 @@ struct ProfileView: View {
                     if post.title != nil {
                         Text(post.title!)
                     }
+                    
+                    VStack {
+                        ForEach(post.media) { media in
+                            Text(media.url)
+                        }
+                    }
                 }
             }
         }.navigationBarTitle(username + "'s Feed").onAppear {
