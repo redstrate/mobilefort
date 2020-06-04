@@ -8,9 +8,9 @@ extension String {
 }
 
 final class AttributedTextComponent: UIViewRepresentable {
-    let string: NSAttributedString
+    let string: NSMutableAttributedString
     
-    init(_ string: NSAttributedString) {
+    init(_ string: NSMutableAttributedString) {
         self.string = string
     }
     
@@ -27,30 +27,56 @@ final class AttributedTextComponent: UIViewRepresentable {
     }
 }
 
+struct SizeKey: PreferenceKey {
+    static var defaultValue: CGSize = .zero
+    
+    static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
+        value = nextValue()
+    }
+}
+
 struct AttributedText: View {
-    let html: NSAttributedString
+    let html: NSMutableAttributedString
     let component: AttributedTextComponent
     
     @State var height: CGFloat = 0.0
-    
-    init(_ html: NSAttributedString) {
+    @State var lastSize: CGSize = .zero
+
+    init(_ html: NSMutableAttributedString) {
         self.html = html
         self.component = AttributedTextComponent(html)
     }
+    
+    func calculateHeight(size: CGSize) {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: size.width, height: .greatestFiniteMagnitude))
+                
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        
+        label.attributedText = self.html
+        
+        label.sizeToFit()
+        
+        self.height = label.frame.height
+        self.lastSize = size
+    }
         
     var body: some View {
-        component.onAppear {
-            let label = UILabel()
+        ZStack {
+            GeometryReader { geometry in
+                Rectangle().fill(Color.clear).preference(key: SizeKey.self, value: geometry.size)
+            }.onPreferenceChange(SizeKey.self, perform: { size in
+                self.calculateHeight(size: size)
+            })
             
-            label.numberOfLines = 0
-            label.lineBreakMode = .byWordWrapping
-            label.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-            
-            label.attributedText = self.html
-            label.sizeToFit()
-            
-            self.height = label.frame.height + 15.0 // for padding
-        }.frame(minWidth: 0.0, maxWidth: .infinity, minHeight: 0.0, maxHeight: height)
+            component
+        }
+        .frame(minWidth: 0.0, maxWidth: .infinity, minHeight: self.height, maxHeight: self.height)
+        .onAppear {
+            if self.lastSize != .zero {
+                self.calculateHeight(size: self.lastSize)
+            }
+        }
     }
 }
 
@@ -108,6 +134,6 @@ struct PostView: View {
 
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
-        return PostView(post: ParsedPostContainer(post: fooPost, contentAttributed: NSAttributedString()))
+        return PostView(post: ParsedPostContainer(post: fooPost, contentAttributed: NSMutableAttributedString()))
     }
 }
