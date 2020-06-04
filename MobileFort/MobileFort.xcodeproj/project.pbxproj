@@ -17,6 +17,7 @@
 		03BCD7452488948200DA1F27 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCD7442488948200DA1F27 /* PostView.swift */; };
 		03BCD7482488985A00DA1F27 /* RemoteImage in Frameworks */ = {isa = PBXBuildFile; productRef = 03BCD7472488985A00DA1F27 /* RemoteImage */; };
 		03BCD74A2489322500DA1F27 /* AttributedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCD7492489322500DA1F27 /* AttributedText.swift */; };
+		03BCD74D2489365600DA1F27 /* WebView in Frameworks */ = {isa = PBXBuildFile; productRef = 03BCD74C2489365600DA1F27 /* WebView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03BCD74D2489365600DA1F27 /* WebView in Frameworks */,
 				03BCD7482488985A00DA1F27 /* RemoteImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +98,7 @@
 			name = MobileFort;
 			packageProductDependencies = (
 				03BCD7472488985A00DA1F27 /* RemoteImage */,
+				03BCD74C2489365600DA1F27 /* WebView */,
 			);
 			productName = MobileFort;
 			productReference = 03427F552488856C00A0073D /* MobileFort.app */;
@@ -126,6 +129,7 @@
 			mainGroup = 03427F4C2488856C00A0073D;
 			packageReferences = (
 				03BCD7462488985A00DA1F27 /* XCRemoteSwiftPackageReference "RemoteImage" */,
+				03BCD74B2489365600DA1F27 /* XCRemoteSwiftPackageReference "SwiftUI-WebView" */,
 			);
 			productRefGroup = 03427F562488856C00A0073D /* Products */;
 			projectDirPath = "";
@@ -363,6 +367,14 @@
 				minimumVersion = 2.0.2;
 			};
 		};
+		03BCD74B2489365600DA1F27 /* XCRemoteSwiftPackageReference "SwiftUI-WebView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kylehickinson/SwiftUI-WebView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -370,6 +382,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 03BCD7462488985A00DA1F27 /* XCRemoteSwiftPackageReference "RemoteImage" */;
 			productName = RemoteImage;
+		};
+		03BCD74C2489365600DA1F27 /* WebView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03BCD74B2489365600DA1F27 /* XCRemoteSwiftPackageReference "SwiftUI-WebView" */;
+			productName = WebView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
