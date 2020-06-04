@@ -25,7 +25,7 @@ struct PostView: View {
                 
                 VStack(alignment: .leading) {
                     if post.isReblogged() {
-                        Text("Reblogged from " + post.originalUsername!)
+                        Text(post.username + " reblogged from " + post.originalUsername!).foregroundColor(.gray)
                     }
                     
                     if post.getTitle() != nil {
