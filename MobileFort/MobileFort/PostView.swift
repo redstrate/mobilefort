@@ -52,6 +52,8 @@ struct PostView: View {
                         }
                     }
                 }
+                
+                Text(post.getContent())
             }
         }.frame(maxWidth: .infinity)
     }

@@ -14,6 +14,7 @@ struct OriginalPost: Decodable, Identifiable {
     let id: Int
     
     let title: String?
+    let content: String
 }
 
 struct Post: Decodable, Identifiable {
@@ -41,6 +42,14 @@ struct Post: Decodable, Identifiable {
             return originalPost?.title
         } else {
             return title
+        }
+    }
+    
+    func getContent() -> String {
+        if isReblogged() {
+            return originalPost!.content
+        } else {
+            return content
         }
     }
 }
