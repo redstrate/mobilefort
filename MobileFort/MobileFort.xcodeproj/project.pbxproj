@@ -9,22 +9,26 @@
 /* Begin PBXBuildFile section */
 		03427F592488856C00A0073D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03427F582488856C00A0073D /* AppDelegate.swift */; };
 		03427F5B2488856C00A0073D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03427F5A2488856C00A0073D /* SceneDelegate.swift */; };
-		03427F5D2488856C00A0073D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03427F5C2488856C00A0073D /* ContentView.swift */; };
+		03427F5D2488856C00A0073D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03427F5C2488856C00A0073D /* MainView.swift */; };
 		03427F5F2488856D00A0073D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03427F5E2488856D00A0073D /* Assets.xcassets */; };
 		03427F652488856D00A0073D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03427F632488856D00A0073D /* LaunchScreen.storyboard */; };
 		03427F6D248887D200A0073D /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03427F6C248887D200A0073D /* Common.swift */; };
 		03427F7024888C6E00A0073D /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 03427F6F24888C6E00A0073D /* URLImage */; };
+		03BCD7432488947200DA1F27 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCD7422488947200DA1F27 /* ProfileView.swift */; };
+		03BCD7452488948200DA1F27 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCD7442488948200DA1F27 /* PostView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		03427F552488856C00A0073D /* MobileFort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileFort.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03427F582488856C00A0073D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03427F5A2488856C00A0073D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		03427F5C2488856C00A0073D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		03427F5C2488856C00A0073D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		03427F5E2488856D00A0073D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03427F642488856D00A0073D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03427F662488856D00A0073D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03427F6C248887D200A0073D /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		03BCD7422488947200DA1F27 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		03BCD7442488948200DA1F27 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +64,13 @@
 			children = (
 				03427F582488856C00A0073D /* AppDelegate.swift */,
 				03427F5A2488856C00A0073D /* SceneDelegate.swift */,
-				03427F5C2488856C00A0073D /* ContentView.swift */,
+				03427F5C2488856C00A0073D /* MainView.swift */,
 				03427F5E2488856D00A0073D /* Assets.xcassets */,
 				03427F632488856D00A0073D /* LaunchScreen.storyboard */,
 				03427F662488856D00A0073D /* Info.plist */,
 				03427F6C248887D200A0073D /* Common.swift */,
+				03BCD7422488947200DA1F27 /* ProfileView.swift */,
+				03BCD7442488948200DA1F27 /* PostView.swift */,
 			);
 			path = MobileFort;
 			sourceTree = "<group>";
@@ -146,8 +152,10 @@
 			files = (
 				03427F6D248887D200A0073D /* Common.swift in Sources */,
 				03427F592488856C00A0073D /* AppDelegate.swift in Sources */,
+				03BCD7432488947200DA1F27 /* ProfileView.swift in Sources */,
 				03427F5B2488856C00A0073D /* SceneDelegate.swift in Sources */,
-				03427F5D2488856C00A0073D /* ContentView.swift in Sources */,
+				03BCD7452488948200DA1F27 /* PostView.swift in Sources */,
+				03427F5D2488856C00A0073D /* MainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
