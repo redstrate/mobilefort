@@ -13,9 +13,9 @@
 		03427F5F2488856D00A0073D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03427F5E2488856D00A0073D /* Assets.xcassets */; };
 		03427F652488856D00A0073D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03427F632488856D00A0073D /* LaunchScreen.storyboard */; };
 		03427F6D248887D200A0073D /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03427F6C248887D200A0073D /* Common.swift */; };
-		03427F7024888C6E00A0073D /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 03427F6F24888C6E00A0073D /* URLImage */; };
 		03BCD7432488947200DA1F27 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCD7422488947200DA1F27 /* ProfileView.swift */; };
 		03BCD7452488948200DA1F27 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCD7442488948200DA1F27 /* PostView.swift */; };
+		03BCD7482488985A00DA1F27 /* RemoteImage in Frameworks */ = {isa = PBXBuildFile; productRef = 03BCD7472488985A00DA1F27 /* RemoteImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03427F7024888C6E00A0073D /* URLImage in Frameworks */,
+				03BCD7482488985A00DA1F27 /* RemoteImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +92,7 @@
 			);
 			name = MobileFort;
 			packageProductDependencies = (
-				03427F6F24888C6E00A0073D /* URLImage */,
+				03BCD7472488985A00DA1F27 /* RemoteImage */,
 			);
 			productName = MobileFort;
 			productReference = 03427F552488856C00A0073D /* MobileFort.app */;
@@ -122,7 +122,7 @@
 			);
 			mainGroup = 03427F4C2488856C00A0073D;
 			packageReferences = (
-				03427F6E24888C6E00A0073D /* XCRemoteSwiftPackageReference "url-image" */,
+				03BCD7462488985A00DA1F27 /* XCRemoteSwiftPackageReference "RemoteImage" */,
 			);
 			productRefGroup = 03427F562488856C00A0073D /* Products */;
 			projectDirPath = "";
@@ -351,21 +351,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		03427F6E24888C6E00A0073D /* XCRemoteSwiftPackageReference "url-image" */ = {
+		03BCD7462488985A00DA1F27 /* XCRemoteSwiftPackageReference "RemoteImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
+			repositoryURL = "https://github.com/crelies/RemoteImage";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.15;
+				minimumVersion = 2.0.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		03427F6F24888C6E00A0073D /* URLImage */ = {
+		03BCD7472488985A00DA1F27 /* RemoteImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 03427F6E24888C6E00A0073D /* XCRemoteSwiftPackageReference "url-image" */;
-			productName = URLImage;
+			package = 03BCD7462488985A00DA1F27 /* XCRemoteSwiftPackageReference "RemoteImage" */;
+			productName = RemoteImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

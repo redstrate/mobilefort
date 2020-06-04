@@ -1,5 +1,5 @@
 import SwiftUI
-import URLImage
+import RemoteImage
 
 extension String {
     func encodeUrl() -> String? {
@@ -23,12 +23,15 @@ struct PostView: View {
             VStack {
                 ForEach(post.media) { media in
                     VStack {
-                        URLImage(URL(string: media.url.encodeUrl()!)!,
-                                 delay: 0.25) { proxy in
-                                    proxy.image
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                        }
+                        RemoteImage(type: .url(URL(string: media.url.encodeUrl()!)!), errorView: { error in
+                            Text(error.localizedDescription)
+                        }, imageView: { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                        }, loadingView: {
+                            Text("Loading...")
+                        })
                     }
                 }
             }
