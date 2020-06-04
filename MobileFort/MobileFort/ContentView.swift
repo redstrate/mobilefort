@@ -12,10 +12,12 @@ struct PostView: View {
     
     var body: some View {
         VStack {
-            Text(String(post.id))
+            if post.isReblogged() {
+                Text("Reblogged from " + post.originalUsername!)
+            }
             
-            if post.title != nil {
-                Text(post.title!)
+            if post.getTitle() != nil {
+                Text(post.getTitle()!)
             }
             
             VStack {
