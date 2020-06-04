@@ -30,6 +30,7 @@ struct Post: Decodable, Identifiable {
     let originalUsername: String?
     
     let originalPost: OriginalPost?
+    let avatarUrl: String
     
     func isReblogged() -> Bool {
         return originalUsername != nil
@@ -44,8 +45,10 @@ struct Post: Decodable, Identifiable {
     }
 }
 
+let mediaURL = "https://homepages.cae.wisc.edu/~ece533/images/airplane.png"
+
 let testMedia = Media(id: 0,
-                      url: "https://homepages.cae.wisc.edu/~ece533/images/airplane.png")
+                      url: mediaURL)
 
 let fooPost = Post(id: 0,
                    title: "Foo",
@@ -54,7 +57,8 @@ let fooPost = Post(id: 0,
                    media: [testMedia],
                    username: "foobar",
                    originalUsername: nil,
-                   originalPost: nil)
+                   originalPost: nil,
+                   avatarUrl: mediaURL)
 
 let fooPostReblog = Post(id: 1,
                          title: nil,
@@ -63,4 +67,5 @@ let fooPostReblog = Post(id: 1,
                          media: [testMedia],
                          username: "foobar",
                          originalUsername: "foobar2",
-                         originalPost: nil)
+                         originalPost: nil,
+                         avatarUrl: mediaURL)

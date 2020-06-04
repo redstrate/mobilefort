@@ -12,13 +12,29 @@ struct PostView: View {
     
     var body: some View {
         VStack {
-            if post.isReblogged() {
-                Text("Reblogged from " + post.originalUsername!)
-            }
-            
-            if post.getTitle() != nil {
-                Text(post.getTitle()!)
-            }
+            HStack {
+                RemoteImage(type: .url(URL(string: post.avatarUrl.encodeUrl()!)!), errorView: { error in
+                    Text(error.localizedDescription)
+                }, imageView: { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }, loadingView: {
+                    Text("Loading...")
+                }).frame(width: 50.0, height: 50.0).padding(.leading)
+                
+                VStack(alignment: .leading) {
+                    if post.isReblogged() {
+                        Text("Reblogged from " + post.originalUsername!)
+                    }
+                    
+                    if post.getTitle() != nil {
+                        Text(post.getTitle()!)
+                    }
+                }
+                
+                Spacer()
+            }.frame(maxWidth: .infinity)
             
             VStack {
                 ForEach(post.media) { media in
@@ -35,7 +51,7 @@ struct PostView: View {
                     }
                 }
             }
-        }
+        }.frame(maxWidth: .infinity)
     }
 }
 
