@@ -1,16 +1,25 @@
 import SwiftUI
 
 struct ProfileView: View {
+    let username: String
+    
     var body: some View {
-        Text("Hello, world!")
+        VStack {
+            Text("Hello, world!")
+        }.navigationBarTitle(username + "'s Feed")
     }
 }
 
 struct MainView: View {
+    @State private var username: String = ""
+    
     var body: some View {
         NavigationView {
-            NavigationLink(destination: ProfileView()) {
-                Text("Show Feed")
+            VStack {
+                TextField("Username", text: $username)
+                NavigationLink(destination: ProfileView(username: username)) {
+                    Text("Show Feed")
+                }
             }
         }
     }
