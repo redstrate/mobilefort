@@ -43,3 +43,24 @@ struct Post: Decodable, Identifiable {
         }
     }
 }
+
+let testMedia = Media(id: 0,
+                      url: "https://homepages.cae.wisc.edu/~ece533/images/airplane.png")
+
+let fooPost = Post(id: 0,
+                   title: "Foo",
+                   content: "",
+                   postType: .picture,
+                   media: [testMedia],
+                   username: "foobar",
+                   originalUsername: nil,
+                   originalPost: nil)
+
+let fooPostReblog = Post(id: 1,
+                         title: nil,
+                         content: "",
+                         postType: .picture,
+                         media: [testMedia],
+                         username: "foobar",
+                         originalUsername: "foobar2",
+                         originalPost: nil)
