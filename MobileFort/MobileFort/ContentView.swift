@@ -1,4 +1,33 @@
 import SwiftUI
+import URLImage
+
+extension String {
+    func encodeUrl() -> String? {
+        return self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+    }
+}
+
+struct PostView: View {
+    let post: Post
+    
+    var body: some View {
+        VStack {
+            Text(String(post.id))
+            
+            if post.title != nil {
+                Text(post.title!)
+            }
+            
+            VStack {
+                ForEach(post.media) { media in
+                    VStack {
+                        URLImage(URL(string: media.url.encodeUrl()!)!)
+                    }
+                }
+            }
+        }
+    }
+}
 
 struct ProfileView: View {
     let username: String
@@ -8,19 +37,7 @@ struct ProfileView: View {
     var body: some View {
         VStack {
             List(posts) { post in
-                VStack {
-                    Text(String(post.id))
-                    
-                    if post.title != nil {
-                        Text(post.title!)
-                    }
-                    
-                    VStack {
-                        ForEach(post.media) { media in
-                            Text(media.url)
-                        }
-                    }
-                }
+                PostView(post: post)
             }
         }.navigationBarTitle(username + "'s Feed").onAppear {
             let url = URL(string: "https://www.pillowfort.social/" + self.username + "/json")!
