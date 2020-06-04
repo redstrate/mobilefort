@@ -1,8 +1,53 @@
 import SwiftUI
+import WebKit
+import WebView
 
 struct DescriptionView: View {
+    let username: String
+    
+    private func replaceDOM(selector: String) -> String {
+        return
+            """
+            var selectedElement = document.querySelector('\(selector)');
+            document.body.innerHTML = selectedElement.innerHTML;
+            """
+    }
+    
+    var webView: WKWebView {
+        let configuration = WKWebViewConfiguration()
+        
+        let blockRules = """
+         [{
+             "trigger": {
+                 "url-filter": ".*",
+                 "resource-type": ["script"]
+             },
+             "action": {
+                 "type": "block"
+             }
+         }]
+        """
+
+        WKContentRuleListStore.default().compileContentRuleList(
+            forIdentifier: "ContentBlockingRules",
+            encodedContentRuleList: blockRules) { (contentRuleList, error) in
+                configuration.userContentController.add(contentRuleList!)
+        }
+        
+        let userScript = WKUserScript(source: replaceDOM(selector: "#description"),
+                                      injectionTime: WKUserScriptInjectionTime.atDocumentEnd,
+                                      forMainFrameOnly: true)
+        
+        configuration.userContentController.addUserScript(userScript)
+        
+        let view = WKWebView(frame: .zero, configuration: configuration)
+        view.load(URLRequest(url: URL(string: "https://www.pillowfort.social/" + self.username)!))
+        
+        return view
+    }
+    
     var body: some View {
-        Text("Hello, world!")
+        WebView(webView: webView)
     }
 }
 
@@ -18,8 +63,8 @@ struct ProfileView: View {
             }
         }
         .navigationBarTitle(username + "'s Feed")
-        .navigationBarItems(trailing: NavigationLink(destination: DescriptionView()) {
-            Text("View Description")
+        .navigationBarItems(trailing: NavigationLink(destination: DescriptionView(username: username)) {
+            Text("Description")
         })
         .onAppear {
             let url = URL(string: "https://www.pillowfort.social/" + self.username + "/json")!
