@@ -1,5 +1,5 @@
 import SwiftUI
-import RemoteImage
+import URLImage
 
 extension String {
     func encodeUrl() -> String? {
@@ -13,15 +13,11 @@ struct PostView: View {
     var body: some View {
         VStack {
             HStack {
-                RemoteImage(type: .url(URL(string: post.post.avatarUrl.encodeUrl()!)!), errorView: { error in
-                    Text(error.localizedDescription)
-                }, imageView: { image in
+                URLImage(url: URL(string: post.post.avatarUrl.encodeUrl()!)!) { image in
                     image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                }, loadingView: {
-                    Text("Loading...")
-                }).frame(width: 50.0, height: 50.0).padding(.leading)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                }.frame(width: 50.0, height: 50.0).padding(.leading)
                 
                 VStack(alignment: .leading) {
                     if post.post.isReblogged() {
@@ -40,15 +36,10 @@ struct PostView: View {
                 ForEach(post.post.media) { media in
                     if !media.url.isEmpty {
                         VStack {
-                            RemoteImage(type: .url(URL(string: media.url.encodeUrl()!)!), errorView: { error in
-                                Text(error.localizedDescription)
-                            }, imageView: { image in
+                            URLImage(url: URL(string: media.url.encodeUrl()!)!) { image in
                                 image
-                                    .resizable()
                                     .aspectRatio(contentMode: .fit)
-                            }, loadingView: {
-                                Text("Loading...")
-                            })
+                            }
                         }
                     }
                 }
