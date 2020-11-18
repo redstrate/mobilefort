@@ -13,6 +13,16 @@
 		03427F5F2488856D00A0073D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03427F5E2488856D00A0073D /* Assets.xcassets */; };
 		03427F652488856D00A0073D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03427F632488856D00A0073D /* LaunchScreen.storyboard */; };
 		03427F6D248887D200A0073D /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03427F6C248887D200A0073D /* Common.swift */; };
+		03B2BA5C25654E9700483FE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2BA5B25654E9700483FE3 /* AppDelegate.swift */; };
+		03B2BA6025654E9800483FE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B2BA5F25654E9800483FE3 /* Assets.xcassets */; };
+		03B2BA6325654E9800483FE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B2BA6225654E9800483FE3 /* Preview Assets.xcassets */; };
+		03B2BA6625654E9800483FE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B2BA6425654E9800483FE3 /* Main.storyboard */; };
+		03B2BA7025654F0500483FE3 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03427F6C248887D200A0073D /* Common.swift */; };
+		03B2BA7125654F0500483FE3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCD7422488947200DA1F27 /* ProfileView.swift */; };
+		03B2BA7225654F0500483FE3 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCD7442488948200DA1F27 /* PostView.swift */; };
+		03B2BA7925654F4E00483FE3 /* RemoteImage in Frameworks */ = {isa = PBXBuildFile; productRef = 03B2BA7825654F4E00483FE3 /* RemoteImage */; };
+		03B2BA85256550FA00483FE3 /* AttributedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2BA84256550FA00483FE3 /* AttributedText.swift */; };
+		03B2BA9F2565555500483FE3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2BA9E2565555500483FE3 /* MainView.swift */; };
 		03BCD7432488947200DA1F27 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCD7422488947200DA1F27 /* ProfileView.swift */; };
 		03BCD7452488948200DA1F27 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCD7442488948200DA1F27 /* PostView.swift */; };
 		03BCD7482488985A00DA1F27 /* RemoteImage in Frameworks */ = {isa = PBXBuildFile; productRef = 03BCD7472488985A00DA1F27 /* RemoteImage */; };
@@ -21,7 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		03427F552488856C00A0073D /* MobileFort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileFort.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		03427F552488856C00A0073D /* MobileFort (iOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MobileFort (iOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03427F582488856C00A0073D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03427F5A2488856C00A0073D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		03427F5C2488856C00A0073D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -29,6 +39,15 @@
 		03427F642488856D00A0073D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03427F662488856D00A0073D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03427F6C248887D200A0073D /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		03B2BA5925654E9700483FE3 /* MobileFort (macOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MobileFort (macOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		03B2BA5B25654E9700483FE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		03B2BA5F25654E9800483FE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		03B2BA6225654E9800483FE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		03B2BA6525654E9800483FE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		03B2BA6725654E9800483FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03B2BA6825654E9800483FE3 /* MobileFort.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MobileFort.entitlements; sourceTree = "<group>"; };
+		03B2BA84256550FA00483FE3 /* AttributedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedText.swift; sourceTree = "<group>"; };
+		03B2BA9E2565555500483FE3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		03BCD7422488947200DA1F27 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		03BCD7442488948200DA1F27 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		03BCD7492489322500DA1F27 /* AttributedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedText.swift; sourceTree = "<group>"; };
@@ -44,48 +63,97 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		03B2BA5625654E9700483FE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03B2BA7925654F4E00483FE3 /* RemoteImage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		03427F4C2488856C00A0073D = {
 			isa = PBXGroup;
 			children = (
-				03427F572488856C00A0073D /* MobileFort */,
+				03B2BA6E25654ED300483FE3 /* Common */,
+				03427F572488856C00A0073D /* MobileFort (iOS) */,
+				03B2BA5A25654E9700483FE3 /* MobileFort (macOS) */,
 				03427F562488856C00A0073D /* Products */,
+				03B2BA7725654F4E00483FE3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		03427F562488856C00A0073D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				03427F552488856C00A0073D /* MobileFort.app */,
+				03427F552488856C00A0073D /* MobileFort (iOS).app */,
+				03B2BA5925654E9700483FE3 /* MobileFort (macOS).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		03427F572488856C00A0073D /* MobileFort */ = {
+		03427F572488856C00A0073D /* MobileFort (iOS) */ = {
 			isa = PBXGroup;
 			children = (
+				03427F5C2488856C00A0073D /* MainView.swift */,
 				03427F582488856C00A0073D /* AppDelegate.swift */,
 				03427F5A2488856C00A0073D /* SceneDelegate.swift */,
-				03427F5C2488856C00A0073D /* MainView.swift */,
 				03427F5E2488856D00A0073D /* Assets.xcassets */,
 				03427F632488856D00A0073D /* LaunchScreen.storyboard */,
 				03427F662488856D00A0073D /* Info.plist */,
+				03BCD7492489322500DA1F27 /* AttributedText.swift */,
+			);
+			path = "MobileFort (iOS)";
+			sourceTree = "<group>";
+		};
+		03B2BA5A25654E9700483FE3 /* MobileFort (macOS) */ = {
+			isa = PBXGroup;
+			children = (
+				03B2BA5B25654E9700483FE3 /* AppDelegate.swift */,
+				03B2BA5F25654E9800483FE3 /* Assets.xcassets */,
+				03B2BA6425654E9800483FE3 /* Main.storyboard */,
+				03B2BA6725654E9800483FE3 /* Info.plist */,
+				03B2BA6825654E9800483FE3 /* MobileFort.entitlements */,
+				03B2BA6125654E9800483FE3 /* Preview Content */,
+				03B2BA84256550FA00483FE3 /* AttributedText.swift */,
+				03B2BA9E2565555500483FE3 /* MainView.swift */,
+			);
+			path = "MobileFort (macOS)";
+			sourceTree = "<group>";
+		};
+		03B2BA6125654E9800483FE3 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				03B2BA6225654E9800483FE3 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		03B2BA6E25654ED300483FE3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
 				03427F6C248887D200A0073D /* Common.swift */,
 				03BCD7422488947200DA1F27 /* ProfileView.swift */,
 				03BCD7442488948200DA1F27 /* PostView.swift */,
-				03BCD7492489322500DA1F27 /* AttributedText.swift */,
 			);
-			path = MobileFort;
+			path = Common;
+			sourceTree = "<group>";
+		};
+		03B2BA7725654F4E00483FE3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		03427F542488856C00A0073D /* MobileFort */ = {
+		03427F542488856C00A0073D /* MobileFort (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03427F692488856D00A0073D /* Build configuration list for PBXNativeTarget "MobileFort" */;
+			buildConfigurationList = 03427F692488856D00A0073D /* Build configuration list for PBXNativeTarget "MobileFort (iOS)" */;
 			buildPhases = (
 				03427F512488856C00A0073D /* Sources */,
 				03427F522488856C00A0073D /* Frameworks */,
@@ -95,13 +163,33 @@
 			);
 			dependencies = (
 			);
-			name = MobileFort;
+			name = "MobileFort (iOS)";
 			packageProductDependencies = (
 				03BCD7472488985A00DA1F27 /* RemoteImage */,
 				03BCD74C2489365600DA1F27 /* WebView */,
 			);
 			productName = MobileFort;
-			productReference = 03427F552488856C00A0073D /* MobileFort.app */;
+			productReference = 03427F552488856C00A0073D /* MobileFort (iOS).app */;
+			productType = "com.apple.product-type.application";
+		};
+		03B2BA5825654E9700483FE3 /* MobileFort (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03B2BA6925654E9800483FE3 /* Build configuration list for PBXNativeTarget "MobileFort (macOS)" */;
+			buildPhases = (
+				03B2BA5525654E9700483FE3 /* Sources */,
+				03B2BA5625654E9700483FE3 /* Frameworks */,
+				03B2BA5725654E9700483FE3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MobileFort (macOS)";
+			packageProductDependencies = (
+				03B2BA7825654F4E00483FE3 /* RemoteImage */,
+			);
+			productName = MobileFort;
+			productReference = 03B2BA5925654E9700483FE3 /* MobileFort (macOS).app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -110,11 +198,14 @@
 		03427F4D2488856C00A0073D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					03427F542488856C00A0073D = {
 						CreatedOnToolsVersion = 11.5;
+					};
+					03B2BA5825654E9700483FE3 = {
+						CreatedOnToolsVersion = 12.0;
 					};
 				};
 			};
@@ -135,7 +226,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				03427F542488856C00A0073D /* MobileFort */,
+				03427F542488856C00A0073D /* MobileFort (iOS) */,
+				03B2BA5825654E9700483FE3 /* MobileFort (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -147,6 +239,16 @@
 			files = (
 				03427F652488856D00A0073D /* LaunchScreen.storyboard in Resources */,
 				03427F5F2488856D00A0073D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03B2BA5725654E9700483FE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03B2BA6625654E9800483FE3 /* Main.storyboard in Resources */,
+				03B2BA6325654E9800483FE3 /* Preview Assets.xcassets in Resources */,
+				03B2BA6025654E9800483FE3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +269,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		03B2BA5525654E9700483FE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03B2BA85256550FA00483FE3 /* AttributedText.swift in Sources */,
+				03B2BA9F2565555500483FE3 /* MainView.swift in Sources */,
+				03B2BA7025654F0500483FE3 /* Common.swift in Sources */,
+				03B2BA7125654F0500483FE3 /* ProfileView.swift in Sources */,
+				03B2BA7225654F0500483FE3 /* PostView.swift in Sources */,
+				03B2BA5C25654E9700483FE3 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -176,6 +291,14 @@
 				03427F642488856D00A0073D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		03B2BA6425654E9800483FE3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03B2BA6525654E9800483FE3 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -207,6 +330,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -231,13 +355,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -267,6 +393,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -285,12 +412,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -303,7 +432,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = JM5LKVKH48;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = MobileFort/Info.plist;
+				INFOPLIST_FILE = "MobileFort (iOS)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,7 +452,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = JM5LKVKH48;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = MobileFort/Info.plist;
+				INFOPLIST_FILE = "MobileFort (iOS)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,6 +461,60 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		03B2BA6A25654E9800483FE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = "MobileFort (macOS)/MobileFort.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = JM5LKVKH48;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "MobileFort (macOS)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = josh.MobileFort;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		03B2BA6B25654E9800483FE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = "MobileFort (macOS)/MobileFort.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = JM5LKVKH48;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "MobileFort (macOS)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = josh.MobileFort;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -347,11 +530,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03427F692488856D00A0073D /* Build configuration list for PBXNativeTarget "MobileFort" */ = {
+		03427F692488856D00A0073D /* Build configuration list for PBXNativeTarget "MobileFort (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03427F6A2488856D00A0073D /* Debug */,
 				03427F6B2488856D00A0073D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03B2BA6925654E9800483FE3 /* Build configuration list for PBXNativeTarget "MobileFort (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03B2BA6A25654E9800483FE3 /* Debug */,
+				03B2BA6B25654E9800483FE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -364,7 +556,7 @@
 			repositoryURL = "https://github.com/crelies/RemoteImage";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.2;
+				minimumVersion = 3.0.0;
 			};
 		};
 		03BCD74B2489365600DA1F27 /* XCRemoteSwiftPackageReference "SwiftUI-WebView" */ = {
@@ -378,6 +570,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		03B2BA7825654F4E00483FE3 /* RemoteImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03BCD7462488985A00DA1F27 /* XCRemoteSwiftPackageReference "RemoteImage" */;
+			productName = RemoteImage;
+		};
 		03BCD7472488985A00DA1F27 /* RemoteImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 03BCD7462488985A00DA1F27 /* XCRemoteSwiftPackageReference "RemoteImage" */;

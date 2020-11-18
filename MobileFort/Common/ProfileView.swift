@@ -1,6 +1,9 @@
 import SwiftUI
 import WebKit
+
+#if !os(macOS)
 import WebView
+#endif
 
 struct DescriptionView: View {
     let username: String
@@ -46,10 +49,15 @@ struct DescriptionView: View {
         return view
     }
     
+    @ViewBuilder
     var body: some View {
+        #if !os(macOS)
         VStack {
             WebView(webView: webView)
         }.navigationBarTitle("Sidebar", displayMode: .inline)
+        #else
+        Text("Not supported on macOS.")
+        #endif
     }
 }
 
@@ -58,6 +66,7 @@ struct ProfileView: View {
     
     @State var posts: [ParsedPostContainer] = []
     
+    #if os(iOS)
     var body: some View {
         List(posts, id: \.post.id) { post in
             PostView(post: post)
@@ -98,6 +107,44 @@ struct ProfileView: View {
             }.resume()
         }
     }
+    #else
+    var body: some View {
+        List(posts, id: \.post.id) { post in
+            PostView(post: post)
+        }
+        .onAppear {
+            let url = URL(string: "https://www.pillowfort.social/" + self.username + "/json")!
+            
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                do {
+                    if let jsonData = data {
+                        struct Posts : Decodable {
+                            let posts: [Post]
+                        }
+                        
+                        let decoder = JSONDecoder()
+                        decoder.keyDecodingStrategy = .convertFromSnakeCase
+                        
+                        let decodedPosts = try decoder.decode(Posts.self, from: jsonData)
+                        
+                        var postArray = [ParsedPostContainer]()
+                        
+                        for post in decodedPosts.posts {
+                            let container = ParsedPostContainer(post: post, contentAttributed: (try? NSMutableAttributedString(data: post.getContent().data(using: .utf8)!, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil))!)
+                            postArray.append(container)
+                        }
+                        
+                        DispatchQueue.main.sync {
+                            self.posts = postArray
+                        }
+                    }
+                } catch {
+                    print("\(error)")
+                }
+            }.resume()
+        }
+    }
+    #endif
 }
 
 struct ProfileView_Previews: PreviewProvider {
