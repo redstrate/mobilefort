@@ -8,7 +8,7 @@ struct MainView: View {
             VStack {
                 TextField("Username", text: $username)
                     .disableAutocorrection(true)
-                    //.autocapitalization(.none)
+                    .autocapitalization(.none)
                 NavigationLink(destination: ProfileView(username: username)) {
                     Text("Show Feed")
                 }

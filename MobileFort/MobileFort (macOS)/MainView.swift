@@ -4,8 +4,14 @@ struct MainView: View {
     @State private var username: String = ""
     
     var body: some View {
-        VStack {
-            ProfileView(username: "redstrate")
+        NavigationView {
+            VStack {
+                TextField("Username", text: $username)
+                    .disableAutocorrection(true)
+                NavigationLink(destination: ProfileView(username: username)) {
+                    Text("Show Feed")
+                }
+            }
         }
     }
 }
