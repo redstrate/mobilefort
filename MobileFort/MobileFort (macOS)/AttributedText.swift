@@ -1,31 +1,5 @@
 import SwiftUI
 
-extension NSMutableAttributedString {
-    func with(font: NSFont) -> NSMutableAttributedString {
-        enumerateAttribute(NSAttributedString.Key.font, in: NSMakeRange(0, length), options: .longestEffectiveRangeNotRequired, using: { (value, range, stop) in
-            if let originalFont = value as? NSFont, let newFont = applyTraitsFromFont(originalFont, to: font) {
-                addAttribute(NSAttributedString.Key.font, value: newFont, range: range)
-            }
-        })
-        
-        return self
-    }
-    
-    func applyTraitsFromFont(_ originalFont: NSFont, to newFont: NSFont) -> NSFont? {
-        let originalTrait = originalFont.fontDescriptor.symbolicTraits
-        
-        if(originalTrait.contains(NSFontDescriptor.SymbolicTraits.bold)) {
-            var traits = newFont.fontDescriptor.symbolicTraits
-            traits.insert(.bold)
-            
-            let fontDescriptor = newFont.fontDescriptor.withSymbolicTraits(traits)
-            return NSFont.init(descriptor: fontDescriptor, size: 0)
-        }
-        
-        return newFont
-    }
-}
-
 final class AttributedTextComponent: NSViewRepresentable {
     let string: NSMutableAttributedString
     
@@ -39,9 +13,9 @@ final class AttributedTextComponent: NSViewRepresentable {
     
     func updateNSView(_ uiView: NSTextField, context: Context) {
         uiView.backgroundColor = .clear
-        //uiView.numberOfLines = 0
         uiView.lineBreakMode = .byWordWrapping
         uiView.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        
         uiView.attributedStringValue = string
     }
 }
@@ -62,7 +36,7 @@ struct AttributedText: View {
     @State var lastSize: CGSize = .zero
     
     init(_ html: NSMutableAttributedString) {
-        self.html = html.with(font: NSFont.systemFont(ofSize: 15))
+        self.html = html.with(font: NSFont.systemFont(ofSize: NSFont.systemFontSize))
         self.component = AttributedTextComponent(html)
     }
     
@@ -73,6 +47,7 @@ struct AttributedText: View {
         label.lineBreakMode = .byWordWrapping
         
         //label.attributedText = self.html
+
         label.attributedStringValue = self.html
         
         label.sizeToFit()
