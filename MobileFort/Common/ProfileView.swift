@@ -1,10 +1,6 @@
 import SwiftUI
 import WebKit
 
-#if !os(macOS)
-import WebView
-#endif
-
 struct DescriptionView: View {
     let username: String
     
@@ -49,16 +45,17 @@ struct DescriptionView: View {
         return view
     }
     
-    @ViewBuilder
+    #if !os(macOS)
     var body: some View {
-        #if !os(macOS)
         VStack {
             WebView(webView: webView)
         }.navigationBarTitle("Sidebar", displayMode: .inline)
-        #else
-        Text("Not supported on macOS.")
-        #endif
     }
+    #else
+    var body: some View {
+        WebView(webView: webView)
+    }
+    #endif
 }
 
 struct ProfileView: View {

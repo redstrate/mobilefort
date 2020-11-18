@@ -24,10 +24,11 @@
 		03B2BA9F2565555500483FE3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2BA9E2565555500483FE3 /* MainView.swift */; };
 		03B2BAA4256556C800483FE3 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 03B2BAA3256556C800483FE3 /* URLImage */; };
 		03B2BAA8256556D100483FE3 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 03B2BAA7256556D100483FE3 /* URLImage */; };
+		03B2BAB225655A1100483FE3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2BAB125655A1100483FE3 /* WebView.swift */; };
+		03B2BAB325655A1100483FE3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B2BAB125655A1100483FE3 /* WebView.swift */; };
 		03BCD7432488947200DA1F27 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCD7422488947200DA1F27 /* ProfileView.swift */; };
 		03BCD7452488948200DA1F27 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCD7442488948200DA1F27 /* PostView.swift */; };
 		03BCD74A2489322500DA1F27 /* AttributedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCD7492489322500DA1F27 /* AttributedText.swift */; };
-		03BCD74D2489365600DA1F27 /* WebView in Frameworks */ = {isa = PBXBuildFile; productRef = 03BCD74C2489365600DA1F27 /* WebView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		03B2BA6825654E9800483FE3 /* MobileFort.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MobileFort.entitlements; sourceTree = "<group>"; };
 		03B2BA84256550FA00483FE3 /* AttributedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedText.swift; sourceTree = "<group>"; };
 		03B2BA9E2565555500483FE3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		03B2BAB125655A1100483FE3 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		03BCD7422488947200DA1F27 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		03BCD7442488948200DA1F27 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		03BCD7492489322500DA1F27 /* AttributedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedText.swift; sourceTree = "<group>"; };
@@ -58,7 +60,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03BCD74D2489365600DA1F27 /* WebView in Frameworks */,
 				03B2BAA8256556D100483FE3 /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +138,7 @@
 				03427F6C248887D200A0073D /* Common.swift */,
 				03BCD7422488947200DA1F27 /* ProfileView.swift */,
 				03BCD7442488948200DA1F27 /* PostView.swift */,
+				03B2BAB125655A1100483FE3 /* WebView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -165,7 +167,6 @@
 			);
 			name = "MobileFort (iOS)";
 			packageProductDependencies = (
-				03BCD74C2489365600DA1F27 /* WebView */,
 				03B2BAA7256556D100483FE3 /* URLImage */,
 			);
 			productName = MobileFort;
@@ -219,7 +220,6 @@
 			);
 			mainGroup = 03427F4C2488856C00A0073D;
 			packageReferences = (
-				03BCD74B2489365600DA1F27 /* XCRemoteSwiftPackageReference "SwiftUI-WebView" */,
 				03B2BAA2256556C800483FE3 /* XCRemoteSwiftPackageReference "url-image" */,
 			);
 			productRefGroup = 03427F562488856C00A0073D /* Products */;
@@ -260,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03427F6D248887D200A0073D /* Common.swift in Sources */,
+				03B2BAB225655A1100483FE3 /* WebView.swift in Sources */,
 				03427F592488856C00A0073D /* AppDelegate.swift in Sources */,
 				03BCD7432488947200DA1F27 /* ProfileView.swift in Sources */,
 				03427F5B2488856C00A0073D /* SceneDelegate.swift in Sources */,
@@ -279,6 +280,7 @@
 				03B2BA7125654F0500483FE3 /* ProfileView.swift in Sources */,
 				03B2BA7225654F0500483FE3 /* PostView.swift in Sources */,
 				03B2BA5C25654E9700483FE3 /* AppDelegate.swift in Sources */,
+				03B2BAB325655A1100483FE3 /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,14 +561,6 @@
 				minimumVersion = 2.1.9;
 			};
 		};
-		03BCD74B2489365600DA1F27 /* XCRemoteSwiftPackageReference "SwiftUI-WebView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kylehickinson/SwiftUI-WebView";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.2.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -579,11 +573,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 03B2BAA2256556C800483FE3 /* XCRemoteSwiftPackageReference "url-image" */;
 			productName = URLImage;
-		};
-		03BCD74C2489365600DA1F27 /* WebView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 03BCD74B2489365600DA1F27 /* XCRemoteSwiftPackageReference "SwiftUI-WebView" */;
-			productName = WebView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
